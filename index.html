@@ -6,288 +6,246 @@
     <title>Lemon Squeezy – Kids Camera</title>
     <meta
       name="description"
-      content="A minimal, kid-friendly camera for iPhone. Big shutter button, daily limits, and a safe in-app gallery."
+      content="An easy peasy camera app for kids. One huge shutter button. Photos stay in the app, not the camera roll."
     />
-
-    <!-- Nice sharing previews (optional, but harmless) -->
-    <meta property="og:title" content="Lemon Squeezy – Kids Camera" />
-    <meta
-      property="og:description"
-      content="Big button. No chaos. A minimal camera for kids — with a safe in-app gallery."
-    />
-    <meta property="og:type" content="website" />
-
     <link rel="stylesheet" href="styles.css" />
   </head>
 
   <body>
-    <header class="header" id="top">
-      <div class="wrap header-inner">
-        <a class="brand" href="#top" aria-label="Lemon Squeezy home">
-          <span class="brand-mark" aria-hidden="true"></span>
-          <span class="brand-name">Lemon Squeezy</span>
-        </a>
-
-        <nav class="nav-desktop" aria-label="Primary navigation">
-          <a href="#features">Features</a>
-          <a href="#privacy">Privacy</a>
-          <a href="#faq">FAQ</a>
-          <a class="btn" href="#download">Get the app</a>
-        </nav>
-
-        <button
-          class="menu-button"
-          type="button"
-          aria-label="Open menu"
-          aria-expanded="false"
-          aria-controls="mobile-menu"
-        >
-          Menu
-        </button>
-      </div>
-
+    <header class="site-header">
       <div class="wrap">
-        <div class="mobile-menu" id="mobile-menu" hidden>
-          <nav class="nav-mobile" aria-label="Mobile navigation">
-            <a href="#features" data-close>Features</a>
-            <a href="#privacy" data-close>Privacy</a>
-            <a href="#faq" data-close>FAQ</a>
-            <a class="btn" href="#download" data-close>Get the app</a>
+        <div class="topbar">
+          <a class="brand" href="#top" aria-label="Lemon Squeezy home">
+            <span class="dot" aria-hidden="true"></span>
+            <span>Lemon Squeezy</span>
+          </a>
+
+          <nav class="nav">
+            <a href="#features">Features</a>
+            <a href="#privacy">Privacy</a>
+            <a href="#faq">FAQ</a>
           </nav>
+
+          <a class="btn btn-primary" href="#download">Get the app</a>
         </div>
       </div>
     </header>
 
-    <main>
+    <main id="top">
       <!-- HERO -->
-      <section class="section hero">
+      <section class="hero">
         <div class="wrap">
-          <p class="kicker">Kids camera for iPhone</p>
+          <p class="kicker">An easy peasy camera app for kids</p>
           <h1>Big button. No chaos.</h1>
           <p class="lede">
-            Lemon Squeezy is a minimal camera app designed for kids — with a massive shutter,
-            daily photo limits, and a safe in-app gallery so they can snap away without
-            wandering into your Camera Roll.
+            Lemon Squeezy is a minimal camera app for mini photographers — with one huge shutter
+            button little fingers won’t miss, and a kid-safe gallery that keeps photos in the app,
+            not your camera roll.
           </p>
 
           <div class="cta-row" id="download">
-            <a class="btn btn-primary" href="#">Download on the App Store</a>
-            <a class="btn btn-secondary" href="#">Join TestFlight</a>
+            <a class="btn btn-primary btn-lg" href="#">Download on the App Store</a>
+            <a class="btn btn-lg" href="#">Join TestFlight</a>
           </div>
 
-          <figure class="media">
-            <img src="images/hero.jpg" alt="Lemon Squeezy camera screen" loading="eager" />
+          <div class="meta">
+            <span>No ads</span>
+            <span class="sep">•</span>
+            <span>No tracking</span>
+            <span class="sep">•</span>
+            <span>No gimmicks</span>
+          </div>
+
+          <figure class="frame hero-frame">
+            <img
+              src="images/hero.jpg"
+              alt="Lemon Squeezy camera screen"
+              loading="eager"
+            />
           </figure>
         </div>
       </section>
 
-      <!-- QUICK POINTS -->
-      <section class="section">
+      <!-- STRIP -->
+      <section class="strip">
         <div class="wrap">
-          <div class="grid-3">
-            <div class="card">
-              <h2 class="card-title">A shutter kids can actually hit</h2>
-              <p class="muted">Oversized, forgiving, and built for clumsy thumbs.</p>
+          <div class="strip-grid">
+            <div class="strip-item">
+              <p class="strip-title">One huge shutter button little fingers won’t miss</p>
+              <p class="strip-text">A simple camera screen, built for clumsy thumbs.</p>
             </div>
-            <div class="card">
-              <h2 class="card-title">A safe in-app gallery</h2>
-              <p class="muted">No backdoor into your Photos library. No scary menus.</p>
+            <div class="strip-item">
+              <p class="strip-title">Photos stay in your app, not the camera roll</p>
+              <p class="strip-text">A safe in-app gallery that kids can browse confidently.</p>
             </div>
-            <div class="card">
-              <h2 class="card-title">Limits that help you stay sane</h2>
-              <p class="muted">Daily caps + cooldown timers to curb rapid-fire chaos.</p>
+            <div class="strip-item">
+              <p class="strip-title">Daily limits and cooldown timers</p>
+              <p class="strip-text">Curb itchy shutter fingers without hovering over them.</p>
             </div>
           </div>
         </div>
       </section>
 
       <!-- FEATURES -->
-      <section class="section" id="features">
+      <section id="features" class="section">
         <div class="wrap">
-          <h2 class="section-title">Designed for tiny photographers</h2>
+          <h2>Designed for tiny photographers</h2>
           <p class="section-intro">
-            Fewer buttons, fewer distractions, fewer chances to accidentally access the rest of your phone.
+            Lemon Squeezy keeps things simple at first, then unlocks more as your kid grows —
+            so they can learn camera skills without getting lost in settings.
           </p>
 
           <article class="feature">
-            <div class="feature-text">
-              <h3>The giant shutter button</h3>
-              <p class="muted">
-                The camera screen is stripped down to the essentials — with a shutter button
-                that’s easy to hit. Optional “Clumsy Fingers” mode can make (almost) the whole
-                screen a tap target.
-              </p>
-            </div>
-            <figure class="media">
-              <img src="images/camera-ui.jpg" alt="Big shutter button UI" loading="lazy" />
-            </figure>
+            <h3>One huge shutter button</h3>
+            <p>
+              The camera screen is stripped down to the essentials. The shutter button is big,
+              bold, and easy to hit — and you can go even further with “Clumsy Fingers” mode,
+              which makes (almost) the entire screen a tap target.
+            </p>
           </article>
 
           <article class="feature">
-            <div class="feature-text">
-              <h3>Photos stay in the app</h3>
-              <p class="muted">
-                Apple’s Camera app is a back door into your entire library. Lemon Squeezy keeps
-                kids’ snaps separate in a kid-safe gallery that’s easy to browse.
-              </p>
-            </div>
-            <figure class="media">
-              <img src="images/gallery.jpg" alt="In-app gallery" loading="lazy" />
-            </figure>
+            <h3>Photos stay in the app, not the camera roll</h3>
+            <p>
+              Apple’s Camera app is a sneaky back door into your entire photo library. Lemon Squeezy
+              keeps kids’ snaps separate in a safe in-app gallery, so they can review their photos
+              without scrolling through yours.
+            </p>
           </article>
 
           <article class="feature">
-            <div class="feature-text">
-              <h3>Cooldowns and daily limits</h3>
-              <p class="muted">
-                Set a daily photo limit and an optional cooldown after each shot. It’s a simple
-                way to prevent 400 near-identical photos — without you needing to hover.
-              </p>
-            </div>
+            <h3>Daily limits and cooldown timers</h3>
+            <p>
+              Set a daily photo limit and an optional cooldown after each shot. It’s a gentle way
+              to slow things down, prevent rapid-fire “click click click,” and keep storage under control.
+            </p>
+
             <div class="callout">
-              <p><strong>Nice touch:</strong> When the daily limit is reached, playtime’s over.</p>
+              <p class="callout-title">Nice and simple:</p>
+              <p class="callout-text">
+                When the daily limit is reached, playtime’s over.
+              </p>
             </div>
           </article>
 
           <article class="feature">
-            <div class="feature-text">
-              <h3>Optional Pro upgrades</h3>
-              <p class="muted">
-                Themes, widgets, quick launch, and quality controls. The core camera stays simple.
-              </p>
-            </div>
-            <figure class="media">
-              <img src="images/settings.jpg" alt="Settings screen" loading="lazy" />
-            </figure>
+            <h3>Settings that adapt to your kid as they grow</h3>
+            <p>
+              Start with the basics, then gradually introduce extra controls as they get more confident —
+              like tap to focus and pinch to zoom. You decide what’s available, and when.
+            </p>
+          </article>
+
+          <article class="feature">
+            <h3>Widgets, quick access, themes, and quality settings*</h3>
+            <p>
+              Want to go beyond the basics? Pro members can customize the camera’s look, add widgets,
+              launch from the Lock Screen, and choose higher (or lower) quality photos depending on
+              your storage needs.
+            </p>
+            <p class="fineprint">
+              * Available to Pro members.
+            </p>
           </article>
 
           <div class="cta-panel">
-            <h3>Ready to let them take the shot?</h3>
-            <p class="muted">
-              Lemon Squeezy is built to be the camera you hand over without immediately regretting it.
+            <h3>No ads, no tracking, no gimmicks. No worries.</h3>
+            <p>
+              Lemon Squeezy is built for one job: letting kids take photos safely, without accidentally
+              wandering into the rest of your phone.
             </p>
             <div class="cta-row">
-              <a class="btn btn-primary" href="#">Download on the App Store</a>
-              <a class="btn btn-secondary" href="#privacy">Privacy details</a>
+              <a class="btn btn-primary btn-lg" href="#">Download on the App Store</a>
+              <a class="btn btn-lg" href="#privacy">Privacy details</a>
             </div>
           </div>
         </div>
       </section>
 
       <!-- PRIVACY -->
-      <section class="section" id="privacy">
+      <section id="privacy" class="section section-alt">
         <div class="wrap">
-          <h2 class="section-title">Privacy, by design</h2>
+          <h2>Privacy, by design</h2>
           <p class="section-intro">
-            This is a kids app. It should be strict (and boring) about data.
+            This is a kids app. It should be boring about data.
           </p>
 
-          <div class="grid-3">
-            <div class="card">
-              <h2 class="card-title">No ads. No tracking.</h2>
-              <p class="muted">Lemon Squeezy doesn’t sell attention, so it doesn’t need to collect it.</p>
+          <div class="privacy-grid">
+            <div class="privacy-item">
+              <h3>No ads. No tracking.</h3>
+              <p>
+                Lemon Squeezy doesn’t sell attention, so it doesn’t need to collect it.
+              </p>
             </div>
-            <div class="card">
-              <h2 class="card-title">Separate gallery</h2>
-              <p class="muted">Kids can review their photos without browsing your whole library.</p>
+
+            <div class="privacy-item">
+              <h3>Separate gallery</h3>
+              <p>
+                Kids can browse their snaps without browsing your entire camera roll.
+              </p>
             </div>
-            <div class="card">
-              <h2 class="card-title">Minimal permissions</h2>
-              <p class="muted">Only what’s needed to function as a camera. Nothing sneaky.</p>
+
+            <div class="privacy-item">
+              <h3>Minimal permissions</h3>
+              <p>
+                Only what the app needs to function as a camera — nothing sneaky.
+              </p>
             </div>
           </div>
 
           <p class="fineprint">
-            Replace this with your exact privacy wording and final App Store privacy stance.
+            Replace this paragraph with your exact privacy wording and links once finalized.
           </p>
         </div>
       </section>
 
       <!-- FAQ -->
-      <section class="section" id="faq">
+      <section id="faq" class="section">
         <div class="wrap">
-          <h2 class="section-title">FAQ</h2>
+          <h2>FAQ</h2>
 
           <details class="faq" open>
             <summary>Does this replace the iPhone Camera app?</summary>
-            <p class="muted">
-              It can, but it’s mainly for the moments you want to hand your phone to a kid without
-              giving them the keys to the kingdom.
-            </p>
-          </details>
-
-          <details class="faq">
-            <summary>Can kids zoom and tap to focus?</summary>
-            <p class="muted">
-              Yes — those can be enabled as optional gestures as they get more confident, while the
-              default experience stays simple.
+            <p>
+              It can — but it’s mainly for the moments you want to hand over your phone without handing over
+              your entire photo library too.
             </p>
           </details>
 
           <details class="faq">
             <summary>What’s in Pro?</summary>
-            <p class="muted">
-              Custom themes, widgets, quick launch, and quality controls. Keep the core camera uncluttered.
+            <p>
+              Widgets, quick access, themes, and quality settings. The core camera stays simple either way.
             </p>
           </details>
 
-          <div class="cta-row footer-cta">
-            <a class="btn btn-primary" href="#">Download on the App Store</a>
-            <a class="btn btn-secondary" href="#">Press kit</a>
-          </div>
+          <details class="faq">
+            <summary>Where do the photos go?</summary>
+            <p>
+              Into Lemon Squeezy’s own gallery inside the app. Kids can browse their snaps there, without
+              scrolling through your camera roll.
+            </p>
+          </details>
 
-          <p class="fineprint">
-            Support: <a href="mailto:support@yourdomain.com">support@yourdomain.com</a>
-          </p>
+          <div class="footer-cta">
+            <a class="btn btn-primary btn-lg" href="#">Download on the App Store</a>
+          </div>
         </div>
       </section>
     </main>
 
-    <footer class="footer">
-      <div class="wrap footer-inner">
-        <div class="footer-links">
-          <a href="#">Press kit</a>
-          <a href="mailto:support@yourdomain.com">Support</a>
-          <a href="#top">Back to top</a>
-        </div>
-
-        <div class="social">
-          <a class="icon" href="#" aria-label="Instagram" title="Instagram">IG</a>
-          <a class="icon" href="#" aria-label="TikTok" title="TikTok">TT</a>
-          <a class="icon" href="#" aria-label="YouTube" title="YouTube">YT</a>
-        </div>
-      </div>
-
+    <footer class="site-footer">
       <div class="wrap">
-        <p class="fineprint">© <span id="year"></span> Lemon Squeezy</p>
+        <p class="footer-left">© <span id="year"></span> Lemon Squeezy</p>
+        <p class="footer-right">
+          <a href="#">Press kit</a>
+          <span class="sep">•</span>
+          <a href="mailto:support@yourdomain.com">Support</a>
+        </p>
       </div>
     </footer>
 
     <script>
-      // Mobile menu toggle (simple, no dependencies)
-      const btn = document.querySelector(".menu-button");
-      const menu = document.getElementById("mobile-menu");
-      const closeLinks = menu.querySelectorAll("[data-close]");
-
-      function setMenu(open) {
-        btn.setAttribute("aria-expanded", open ? "true" : "false");
-        menu.hidden = !open;
-      }
-
-      btn.addEventListener("click", () => {
-        const isOpen = btn.getAttribute("aria-expanded") === "true";
-        setMenu(!isOpen);
-      });
-
-      closeLinks.forEach((a) => a.addEventListener("click", () => setMenu(false)));
-
-      // Close when tapping outside the menu area
-      document.addEventListener("click", (e) => {
-        if (menu.hidden) return;
-        const header = document.querySelector(".header");
-        if (!header.contains(e.target)) setMenu(false);
-      });
-
       document.getElementById("year").textContent = new Date().getFullYear();
     </script>
   </body>
