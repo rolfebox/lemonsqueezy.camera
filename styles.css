@@ -245,7 +245,7 @@ h1{
 
 /* Pips PNG: transparent, no background, no shadow */
 .pips{
-  margin: 12px 0 0;
+  margin: auto;
   background: transparent;
   border-radius: 0;
   box-shadow: none;
