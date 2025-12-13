@@ -27,7 +27,7 @@ body{
 }
 
 /* Tighter paragraph rhythm */
-p{ margin: 0 0 12px; }
+p{ margin: 0 0 10px; }
 .feature p:last-child,
 .strip-item p:last-child,
 .privacy-item p:last-child,
@@ -123,13 +123,8 @@ a:hover{ text-decoration: underline; }
   font-size: 15px;
 }
 
-.btn-primary{
-  background: var(--primary);
-}
-
-.btn-secondary{
-  background: var(--secondary);
-}
+.btn-primary{ background: var(--primary); }
+.btn-secondary{ background: var(--secondary); }
 
 /* Hero */
 .hero{
@@ -162,8 +157,9 @@ h1{
 .hero-appicon{
   width: auto;
   height: clamp(72px, 9vw, 120px);
-  border-radius: 22px;
-  box-shadow: 0 10px 22px rgba(64,61,54,.12);
+  /* PNG with transparency: no shadow, no background */
+  border-radius: 0;
+  box-shadow: none;
 }
 
 @media (max-width: 779px){
@@ -177,7 +173,7 @@ h1{
 }
 
 .lede{
-  margin: 0 0 18px;
+  margin: 0 0 16px;
   color: var(--muted);
   font-size: 18px;
   max-width: 64ch;
@@ -187,14 +183,14 @@ h1{
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  margin: 18px 0 14px;
+  margin: 16px 0 12px;
 }
 
 .meta{
   color: var(--muted);
   font-weight: 900;
   font-size: 13px;
-  margin-bottom: 18px;
+  margin-bottom: 16px;
 }
 .sep{ opacity: .7; margin: 0 6px; }
 
@@ -227,34 +223,40 @@ h1{
 
 /* Hero-style media used inside sections */
 .hero-media.inline-hero{
-  margin-top: 14px;
+  margin-top: 12px;
 }
 
 .hero-media.inline-hero img{
   max-height: 520px;
 }
 
+/* Compact figures: 75% width on desktop, full width on mobile */
+.compact-figure{
+  margin-top: 12px;
+}
+
 @media (min-width: 780px){
-  .hero-media.inline-hero{
-    width: min(var(--wrap), calc(100% - 40px));
+  .compact-figure{
+    width: calc(min(var(--wrap), calc(100% - 40px)) * 0.75);
     margin-left: auto;
     margin-right: auto;
   }
 }
 
-/* Pips image under Set your limits */
+/* Pips PNG: transparent, no background, no shadow */
 .pips{
   margin: 12px 0 0;
-  background: rgba(241,228,178,.75);
-  border-radius: 18px;
-  box-shadow: 0 10px 22px rgba(64,61,54,.08);
-  overflow: hidden;
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+  overflow: visible;
 }
 
 .pips img{
   display: block;
   width: 100%;
   height: auto;
+  object-fit: contain;
 }
 
 /* Strip */
@@ -305,7 +307,7 @@ h2{
 }
 
 .section-intro{
-  margin: 0 0 18px;
+  margin: 0 0 16px;
   color: var(--muted);
   font-size: 17px;
   max-width: 72ch;
@@ -313,7 +315,7 @@ h2{
 
 /* Features */
 .feature{
-  padding: 18px 0 24px;
+  padding: 16px 0 20px;
   border-top: 1px solid rgba(64,61,54,.10);
 }
 .feature:first-of-type{ border-top: 0; padding-top: 0; }
@@ -330,7 +332,7 @@ h2{
 
 /* CTA panel */
 .cta-panel{
-  margin-top: 24px;
+  margin-top: 22px;
   padding: 22px;
   border-radius: var(--radius);
   background: rgba(241,228,178,.75);
