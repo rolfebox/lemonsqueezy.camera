@@ -300,6 +300,15 @@ h1{
 }
 
 /* Headings */
+h1,
+h2,
+h3,
+.subtitle,
+.section-title {
+  font-family: "Merriweather", serif;
+  font-weight: 700;
+}
+
 h2{
   margin: 0 0 10px;
   font-size: clamp(26px, 4.3vw, 40px);
