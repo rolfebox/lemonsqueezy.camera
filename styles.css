@@ -6,7 +6,6 @@
 
   --muted: rgba(64,61,54,.78);
   --border: rgba(64,61,54,.14);
-  --shadow: 0 10px 26px rgba(64,61,54,.10);
 
   --radius: 22px;
   --wrap: 880px;
@@ -17,7 +16,7 @@ html,body{ height: 100%; }
 
 body{
   margin: 0;
-  background: var(--bg);
+  background: var(--bg); /* colored background for hero + final CTA */
   color: var(--ink);
   font: 16px/1.65 ui-rounded, system-ui, -apple-system, "SF Pro Rounded",
         "SF Pro Display", Segoe UI, Roboto, Helvetica, Arial, sans-serif;
@@ -49,9 +48,9 @@ h1{
 
 h2{
   margin: 0 0 10px;
-  font-size: clamp(26px, 4.3vw, 40px);
-  line-height: 1.14;
-  letter-spacing: -.6px;
+  font-size: clamp(20px, 3.2vw, 30px); /* smaller H2 */
+  line-height: 1.18;
+  letter-spacing: -.4px;
 }
 
 /* Header (not sticky) */
@@ -120,19 +119,21 @@ h2{
   box-shadow: none;
 }
 
+/* Subtitle under the title (bigger, normal case) */
 .kicker{
-  margin: 14px 0 0;
+  margin: 16px 0 0;
   color: var(--muted);
-  font-weight: 950;
-  letter-spacing: .8px;
-  text-transform: uppercase;
-  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: none;
+  font-size: clamp(16px, 2vw, 20px);
 }
 
+/* Hero description slightly larger than normal section text */
 .lede{
   margin: 18px auto 0;
   color: var(--muted);
-  font-size: clamp(18px, 2.1vw, 22px);
+  font-size: clamp(19px, 2.3vw, 24px);
   line-height: 1.55;
   max-width: 62ch;
 }
@@ -148,7 +149,7 @@ h2{
   text-decoration: none;
   color: var(--ink);
   background: var(--primary);
-  box-shadow: 0 10px 22px rgba(64,61,54,.12);
+  box-shadow: none; /* keep clean */
   transform: translateY(0);
   transition: transform 120ms ease;
   padding: 12px 18px;
@@ -170,7 +171,7 @@ h2{
   margin: 22px 0 0;
 }
 
-/* Hero media + section media */
+/* Hero media + section media (no shadows) */
 .hero-media{
   margin: 26px auto 0;
 }
@@ -182,21 +183,23 @@ h2{
   max-height: 520px;
   object-fit: cover;
   border-radius: var(--radius);
-  box-shadow: var(--shadow);
+  box-shadow: none;
 }
 
+/* Sections */
 .section{
   padding: 54px 0;
-  border-top: 1px solid rgba(64,61,54,.10);
+  border-top: 0; /* no visible dividers */
 }
 
-.section:first-of-type{
-  border-top: 0;
+/* Middle sections on white */
+.section-white{
+  background: #ffffff;
 }
 
 .section-text{
   color: var(--muted);
-  font-size: 18px;
+  font-size: 17px;
   max-width: 70ch;
 }
 
@@ -209,13 +212,13 @@ h2{
   width: 100%;
   height: auto;
   border-radius: var(--radius);
-  box-shadow: var(--shadow);
+  box-shadow: none;
 }
 
-/* Final CTA */
+/* Final CTA (colored background via body) */
 .final-cta{
   padding: 64px 0 76px;
-  border-top: 1px solid rgba(64,61,54,.10);
+  border-top: 0;
   text-align: center;
 }
 
@@ -223,14 +226,14 @@ h2{
   margin: 0 auto;
 }
 
-/* Footer (simple, repeated links) */
+/* Footer (simple; no social icons) */
 .site-footer{
   border-top: 1px solid var(--border);
   padding: 22px 0;
   color: var(--muted);
   font-weight: 900;
   font-size: 14px;
-  background: transparent;
+  background: transparent; /* sits on colored bg */
 }
 
 .footer-row{
@@ -254,37 +257,6 @@ h2{
 }
 
 .sep{ opacity: .7; }
-
-/* Social icons (kept, but minimal) */
-.social{
-  display: inline-flex;
-  gap: 10px;
-  align-items: center;
-}
-
-.social a{
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 44px;
-  height: 44px;
-  border-radius: 999px;
-  background: rgba(255,221,0,.18);
-  color: var(--ink);
-  box-shadow: 0 8px 18px rgba(64,61,54,.08);
-  transition: transform 120ms ease;
-}
-
-.social a:hover{
-  transform: translateY(-1px);
-  text-decoration: none;
-}
-
-.social svg{
-  width: 22px;
-  height: 22px;
-  fill: currentColor;
-}
 
 /* Small screens: keep header links readable */
 @media (max-width: 520px){
