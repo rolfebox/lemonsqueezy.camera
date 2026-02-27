@@ -113,7 +113,7 @@ h2{
 .hero-appicon{
   width: auto;
   height: clamp(78px, 10vw, 128px);
-  border-radius: 0;
+  border-radius: 22%;   /* iOS-style rounded square */
 }
 
 /* Subtitle under the title (even bigger, not all caps) */
