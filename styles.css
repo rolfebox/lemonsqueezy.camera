@@ -57,19 +57,18 @@ h2{
   letter-spacing: -.4px;
 }
 
-/* Header + footer bars (same layout) */
+/* Header + footer bars (same layout, bright yellow) */
 .site-header,
 .site-footer{
-  background: rgba(255,248,223,.92);
-  backdrop-filter: blur(10px);
+  background: var(--bg-hero); /* bright yellow */
 }
 
 .site-header{
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid rgba(0,0,0,.06);
 }
 
 .site-footer{
-  border-top: 1px solid var(--border);
+  border-top: 1px solid rgba(0,0,0,.06);
 }
 
 .bar-row{
@@ -120,12 +119,13 @@ h2{
 /* Subtitle under the title (even bigger, not all caps) */
 .kicker{
   margin: 16px 0 0;
-  color: rgba(64,61,54,.86);
+  font-family: "Merriweather", serif; /* match headings */
   font-weight: 700;
   letter-spacing: 0;
   text-transform: none;
   font-size: clamp(19px, 2.7vw, 28px);
   line-height: 1.25;
+  color: rgba(64,61,54,.86);
 }
 
 .kicker-strong{
@@ -148,7 +148,7 @@ h2{
   justify-content: center;
   border: 0;
   border-radius: 999px;
-  font-weight: 950;
+  font-weight: 800;  
   text-decoration: none;
   color: #ffffff;
   background: var(--cta);
