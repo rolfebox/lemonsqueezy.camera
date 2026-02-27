@@ -22,7 +22,7 @@ body{
   margin: 0;
   background: var(--bg-light); /* default page background (middle sections) */
   color: var(--ink);
-  font: 16px/1.65 ui-rounded, system-ui, -apple-system, "SF Pro Rounded",
+  font: 16px/1.55 ui-rounded, system-ui, -apple-system, "SF Pro Rounded",
         "SF Pro Display", Segoe UI, Roboto, Helvetica, Arial, sans-serif;
   letter-spacing: .1px;
 }
@@ -103,7 +103,7 @@ h2{
 /* Hero */
 .hero{
   background: var(--bg-hero); /* bright yellow */
-  padding: 44px 0 18px;       /* reduced spacing */
+  padding: 24px 0 18px;       /* reduced spacing */
 }
 
 .hero-inner{
@@ -136,7 +136,7 @@ h2{
 .lede{
   margin: 16px auto 0;
   color: rgba(64,61,54,.80);
-  font-size: clamp(20px, 2.5vw, 25px);
+  font-size: clamp(18px, 2.2vw, 22px);
   line-height: 1.55;
   max-width: 62ch;
 }
