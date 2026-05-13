@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tommy's Sweepstake Bonanza – World Cup 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:      #a8f09a;
+      --section: #fef5b8;
+      --white:   #fffef5;
+      --border:  rgba(30, 80, 20, 0.18);
+      --text:    #1c3214;
+      --muted:   #4a6e3a;
+      --accent:  #e8380c;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Nunito', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    /* ── HEADER ───────────────────────────────────── */
+    header {
+      background: var(--white);
+      text-align: center;
+      padding: 64px 24px 0;
+      border-bottom: 2px solid var(--border);
+    }
+
+    .eyebrow {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 15px;
+      font-weight: 500;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      font-family: 'Fredoka', sans-serif;
+      font-weight: 700;
+      font-size: clamp(58px, 11vw, 108px);
+      line-height: .95;
+      margin-bottom: 8px;
+    }
+
+    .host-line {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 17px;
+      font-weight: 500;
+      color: var(--muted);
+      margin-bottom: 44px;
+    }
+
+    .stats {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      max-width: 620px;
+      margin: 0 auto;
+      background: var(--bg);
+      border-radius: 18px;
+      overflow: hidden;
+      border: 2px solid var(--border);
+    }
+
+    .stat {
+      flex: 1 1 140px;
+      padding: 20px 14px;
+      text-align: center;
+      border-right: 2px solid var(--border);
+    }
+
+    .stat:last-child { border-right: none; }
+
+    .stat-value {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 34px;
+      font-weight: 700;
+      display: block;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .stat-label {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: .1em;
+    }
+
+    /* ── PAGE NAV ─────────────────────────────────── */
+    .page-nav {
+      display: flex;
+      justify-content: center;
+      gap: 6px;
+      flex-wrap: wrap;
+      padding: 28px 24px 30px;
+      max-width: 820px;
+      margin: 0 auto;
+    }
+
+    .page-nav a {
+      display: inline-block;
+      background: rgba(30, 80, 20, .07);
+      color: var(--muted);
+      text-decoration: none;
+      font-family: 'Fredoka', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      padding: 6px 16px;
+      border-radius: 50px;
+      border: 2px solid var(--border);
+      transition: background .12s, color .12s, transform .1s;
+      white-space: nowrap;
+    }
+
+    .page-nav a:hover {
+      background: var(--bg);
+      color: var(--text);
+      transform: translateY(-1px);
+    }
+
+    /* ── LAYOUT ───────────────────────────────────── */
+    .section {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 48px 24px;
+    }
+
+    .section + .section { padding-top: 0; }
+
+    .section-inner {
+      background: var(--section);
+      border-radius: 22px;
+      padding: 40px 36px;
+      border: 2px solid var(--border);
+    }
+
+    h2 {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 30px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .intro {
+      font-size: 16px;
+      color: var(--muted);
+      max-width: 580px;
+      margin-bottom: 26px;
+      line-height: 1.65;
+    }
+
+    /* ── PRIZES ───────────────────────────────────── */
+    .prizes { display: grid; gap: 10px; }
+
+    .prize {
+      background: var(--white);
+      border-radius: 14px;
+      padding: 18px 22px;
+      display: grid;
+      grid-template-columns: 38px 1fr auto;
+      align-items: center;
+      gap: 14px;
+      border: 2px solid var(--border);
+      transition: transform .12s, box-shadow .12s;
+    }
+
+    .prize:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(30,80,20,.1); }
+
+    .prize.prize-charity {
+      background: #1a2e50;
+      border-color: rgba(255,255,255,.1);
+      color: #e8f4ff;
+    }
+
+    .prize.prize-charity .prize-name { color: #fff; }
+    .prize.prize-charity .prize-desc { color: rgba(232,244,255,.65); }
+    .prize.prize-charity .prize-amount { color: #a8f09a; }
+
+    .prize-icon { font-size: 24px; text-align: center; }
+    .prize-name { font-family: 'Fredoka', sans-serif; font-size: 21px; font-weight: 600; line-height: 1.2; }
+    .prize-desc { font-size: 14px; color: var(--muted); margin-top: 2px; }
+    .prize-amount { font-family: 'Fredoka', sans-serif; font-size: 22px; font-weight: 700; color: var(--accent); white-space: nowrap; }
+
+    /* ── CARDS ────────────────────────────────────── */
+    .card {
+      background: var(--white);
+      border-radius: 14px;
+      padding: 28px;
+      border: 2px solid var(--border);
+    }
+
+    .card + .card { margin-top: 12px; }
+    .card p { font-size: 16px; margin-bottom: 20px; max-width: 520px; }
+    .card p:last-child { margin-bottom: 0; }
+
+    .btn {
+      display: inline-block;
+      background: var(--text);
+      color: var(--bg);
+      text-decoration: none;
+      font-family: 'Fredoka', sans-serif;
+      font-size: 17px;
+      font-weight: 600;
+      padding: 11px 26px;
+      border-radius: 50px;
+      border: none;
+      cursor: pointer;
+      transition: opacity .15s, transform .12s;
+      margin-right: 8px;
+      margin-bottom: 8px;
+    }
+
+    .btn:hover:not(:disabled) { opacity: .85; transform: translateY(-1px); }
+    .btn:disabled { opacity: .35; cursor: not-allowed; transform: none; }
+    .btn-outline { background: transparent; color: var(--text); border: 2px solid var(--border); }
+
+    .code-note { font-size: 15px; color: var(--muted); margin-top: 14px; }
+    .code-note strong { color: var(--text); }
+
+    /* ── FANTASY PRIZE BANNER ─────────────────────── */
+    .fantasy-prize {
+      background: var(--text);
+      color: var(--bg);
+      border-radius: 14px;
+      padding: 22px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 12px;
+    }
+
+    .fantasy-prize-label {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 15px;
+      font-weight: 500;
+      opacity: .7;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+    }
+
+    .fantasy-prize-amount {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--bg);
+      line-height: 1;
+    }
+
+    /* ── FANTASY PLAYERS LIST ─────────────────────── */
+    .fantasy-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .fantasy-player {
+      background: var(--white);
+      border-radius: 10px;
+      border: 2px solid var(--border);
+      padding: 10px 14px;
+      font-size: 15px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .fantasy-player::before { content: '🦄'; font-size: 14px; }
+
+    /* ── DRAW ─────────────────────────────────────── */
+    .draw-note {
+      background: var(--white);
+      border-radius: 14px;
+      border: 2px solid var(--border);
+      padding: 16px 22px;
+      font-size: 15px;
+      color: var(--muted);
+      margin-bottom: 14px;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .draw-note-icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+
+    .draw-shell {
+      background: var(--white);
+      border-radius: 16px;
+      border: 2px solid var(--border);
+      padding: 44px 24px;
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    .draw-for-label {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      min-height: 22px;
+    }
+
+    .draw-name {
+      font-family: 'Fredoka', sans-serif;
+      font-size: clamp(36px, 7vw, 64px);
+      font-weight: 700;
+      min-height: 76px;
+      margin: 6px 0 0;
+      line-height: 1.1;
+    }
+
+    .draw-rank-caption {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--muted);
+      min-height: 26px;
+      margin-top: 4px;
+      transition: opacity .3s;
+    }
+
+    @keyframes landPop {
+      0%   { color: var(--accent); transform: scale(1.08); }
+      60%  { color: var(--accent); transform: scale(1.04); }
+      100% { color: var(--text);   transform: scale(1); }
+    }
+
+    .draw-name.landed { animation: landPop .6s ease-out forwards; }
+
+    .draw-btn-row {
+      margin-top: 22px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .draw-status {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--muted);
+      margin-top: 12px;
+      min-height: 22px;
+      opacity: .7;
+    }
+
+    /* ── DRAW TABLE ───────────────────────────────── */
+    .draw-table { width: 100%; border-collapse: collapse; }
+
+    .draw-table th {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-align: left;
+      padding: 10px 14px;
+      border-bottom: 2px solid var(--border);
+    }
+
+    .draw-table td {
+      font-size: 16px;
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: middle;
+    }
+
+    .draw-table tr:last-child td { border-bottom: none; }
+    .draw-table .td-num { font-family: 'Fredoka', sans-serif; font-size: 14px; color: var(--muted); width: 38px; }
+    .draw-table .td-entry { font-weight: 600; }
+    .draw-table .td-team { font-size: 15px; }
+    .draw-table .td-rank { font-family: 'Fredoka', sans-serif; font-size: 13px; color: var(--muted); white-space: nowrap; }
+
+    @keyframes rowIn {
+      from { opacity: 0; transform: translateY(-6px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .draw-row-new { animation: rowIn .3s ease-out; }
+
+    /* ── TEAMS GRID ───────────────────────────────── */
+    .teams-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 8px;
+    }
+
+    .team-row {
+      background: var(--white);
+      border-radius: 12px;
+      border: 2px solid var(--border);
+      padding: 11px 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: transform .1s;
+    }
+
+    .team-row:hover { transform: translateY(-2px); }
+    .team-flag { font-size: 20px; flex-shrink: 0; }
+    .team-name-text { font-size: 15px; font-weight: 500; flex: 1; }
+
+    .team-rank-badge {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--muted);
+      background: rgba(30,80,20,.08);
+      border-radius: 50px;
+      padding: 2px 8px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    /* ── PLAYERS GRID ─────────────────────────────── */
+    .players-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+      gap: 8px;
+    }
+
+    .player-row {
+      background: var(--white);
+      border-radius: 12px;
+      border: 2px solid var(--border);
+      padding: 10px 14px;
+      display: grid;
+      grid-template-columns: 30px 1fr;
+      align-items: center;
+      gap: 8px;
+      font-size: 15px;
+    }
+
+    .player-num {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--muted);
+    }
+
+    .player-name { font-weight: 600; }
+    .player-name.empty { color: #aec9a4; font-weight: 400; }
+
+    /* ── PAY ──────────────────────────────────────── */
+    .pay-card {
+      background: var(--text);
+      border-radius: 22px;
+      padding: 40px 36px;
+      text-align: center;
+    }
+
+    .pay-card h2 { color: var(--bg); margin-bottom: 12px; }
+
+    .pay-card p {
+      font-size: 16px;
+      color: rgba(168,240,154,.75);
+      margin-bottom: 28px;
+      max-width: 420px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .btn-pay {
+      display: inline-block;
+      background: var(--bg);
+      color: var(--text);
+      text-decoration: none;
+      font-family: 'Fredoka', sans-serif;
+      font-size: 17px;
+      font-weight: 700;
+      padding: 13px 30px;
+      border-radius: 50px;
+      transition: opacity .15s, transform .12s;
+      margin: 4px;
+    }
+
+    .btn-pay:hover { opacity: .9; transform: translateY(-1px); }
+
+    .btn-pay-ghost {
+      background: transparent;
+      color: rgba(168,240,154,.8);
+      border: 2px solid rgba(168,240,154,.3);
+    }
+
+    .bank {
+      font-family: 'Fredoka', sans-serif;
+      font-size: 16px;
+      color: rgba(168,240,154,.5);
+      margin-top: 22px;
+      line-height: 2.2;
+    }
+
+    footer {
+      text-align: center;
+      padding: 36px 24px;
+      font-family: 'Fredoka', sans-serif;
+      font-size: 15px;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <p class="eyebrow">⚽ Tommy's Sweepstake Bonanza</p>
+    <h1>World Cup<br>2026</h1>
+    <p class="host-line">USA · Canada · Mexico · 11 June – 19 July</p>
+    <div class="stats">
+      <div class="stat"><span class="stat-value">£10</span><span class="stat-label">Per Entry</span></div>
+      <div class="stat"><span class="stat-value">48</span><span class="stat-label">Teams</span></div>
+      <div class="stat"><span class="stat-value">£430</span><span class="stat-label">Prizes</span></div>
+      <div class="stat"><span class="stat-value">+£50</span><span class="stat-label">Charity</span></div>
+    </div>
+    <nav class="page-nav" aria-label="Jump to section">
+      <a href="#prizes">🏅 Prizes</a>
+      <a href="#fantasy">🦄 Fantasy</a>
+      <a href="#draw">🎲 The Draw</a>
+      <a href="#teams">🌍 Teams</a>
+      <a href="#entries">👥 Entries</a>
+      <a href="#pay">💸 Pay Up</a>
+    </nav>
+  </header>
+
+  <!-- PRIZES -->
+  <div class="section" id="prizes">
+    <div class="section-inner">
+      <h2>🏅 Prizes</h2>
+      <p class="intro">Lots of prizes to play for, and they don't just favour the, erm, favourites. "Bad" draws can still win big, and it's technically possible for one team to win the lot. Drama!</p>
+      <div class="prizes">
+        <div class="prize"><span class="prize-icon">🏆️</span><div><div class="prize-name">Champions</div><div class="prize-desc">World Cup 2026 winners!</div></div><span class="prize-amount">£150</span></div>
+        <div class="prize"><span class="prize-icon">🥈</span><div><div class="prize-name">Runner Up</div><div class="prize-desc">Consolation prize for the losing finalists.</div></div><span class="prize-amount">£80</span></div>
+        <div class="prize"><span class="prize-icon">🦁</span><div><div class="prize-name">Lionslayer</div><div class="prize-desc">Whoever knocks out England. If England goes all the way, they get the prize instead.</div></div><span class="prize-amount">£50</span></div>
+        <div class="prize"><span class="prize-icon">⚡️</span><div><div class="prize-name">Thunderbastard</div><div class="prize-desc">Longest distance goal of the tournament. Have it!!</div></div><span class="prize-amount">£50</span></div>
+        <div class="prize"><span class="prize-icon">🥊</span><div><div class="prize-name">FIFA Peace Prize</div><div class="prize-desc">Fittingly given to the team who collects the most red cards.</div></div><span class="prize-amount">£50</span></div>
+        <div class="prize"><span class="prize-icon">🔨</span><div><div class="prize-name">Biggest Hammering</div><div class="prize-desc">Lose a single match by the biggest scoreline. Losing 1-6 "beats" losing 0-5.</div></div><span class="prize-amount">£50</span></div>
+        <div class="prize prize-charity"><span class="prize-icon">🗽</span><div><div class="prize-name">Charity – Freedom for Immigrants</div><div class="prize-desc">An immigrant-led organisation fighting ICE detention in the USA – our deliberate choice for an anti-Trump sweepstake.</div></div><span class="prize-amount">£50</span></div>
+        <div class="prize"><span class="prize-icon">🦄</span><div><div class="prize-name">Fantasy League Winner</div><div class="prize-desc">Optional side game. First place in the mini-league. See below!</div></div><span class="prize-amount" id="fantasy-prize-header">£???</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FANTASY LEAGUE -->
+  <div class="section" id="fantasy">
+    <div class="section-inner">
+      <h2>🦄 Fantasy League</h2>
+      <p class="intro">An optional side game. Pick 15 players and earn points based on their real-life performances in the tournament. £5 to enter. Winner takes all!</p>
+
+      <div class="fantasy-prize">
+        <div>
+          <div class="fantasy-prize-label">Prize pot so far</div>
+          <div style="font-size:14px;color:rgba(168,240,154,.6);margin-top:2px;" id="fantasy-player-count-label">— players × £5</div>
+        </div>
+        <div class="fantasy-prize-amount" id="fantasy-prize-amount">£???</div>
+      </div>
+
+      <div class="card">
+        <p style="margin-bottom:14px;font-weight:600;">Players in the mini-league</p>
+        <div class="fantasy-list" id="fantasy-list">
+          <div class="fantasy-player">Tom Rolfe</div>
+          <div class="fantasy-player">Emma Clarke</div>
+          <div class="fantasy-player">Jon Parsons</div>
+          <div class="fantasy-player">Imogen Hayes</div>
+          <div class="fantasy-player">Seb Collins</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <p>Join the mini-league and pick your squad. Entry is an extra £5 on top of your sweepstake entry.</p>
+        <a href="https://gaming.uefa.com/en/eurofantasy/leagues/yu7HnT/0054006F006D006D0079007300200046006F006F007400620061006C006C00200043006C00750062/Tom%20Rolfe" class="btn">Join the mini-league →</a>
+        <p class="code-note">or use code <strong>yu7HnT</strong></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- THE DRAW -->
+  <div class="section" id="draw">
+    <div class="section-inner">
+      <h2>🎲 The Draw</h2>
+      <p class="intro">Each entry is randomly paired with one team. Want two teams? Buy two entries!</p>
+
+      <div class="draw-note">
+        <span class="draw-note-icon">ℹ️</span>
+        <span>Tom will run the <strong>real draw live</strong> once all 48 entries are filled. Until then, anyone can have a play below – results won't count!</span>
+      </div>
+
+      <div class="draw-shell">
+        <p class="draw-for-label" id="draw-for-label">&nbsp;</p>
+        <div class="draw-name" id="draw-display">– – –</div>
+        <div class="draw-rank-caption" id="draw-rank-caption">&nbsp;</div>
+        <div class="draw-btn-row">
+          <button class="btn" id="draw-btn">Draw Next</button>
+          <button class="btn btn-outline" id="reset-btn">Reset</button>
+        </div>
+        <p class="draw-status" id="draw-status">&nbsp;</p>
+      </div>
+
+      <table class="draw-table">
+        <thead>
+          <tr><th>#</th><th>Entry</th><th>Team</th><th>Ranking</th></tr>
+        </thead>
+        <tbody id="draw-tbody">
+          <tr id="draw-empty-row">
+            <td colspan="4" style="color:var(--muted);font-family:'Fredoka',sans-serif;font-size:15px;padding:20px 14px;">
+              Hit "Draw Next" to start!
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- TEAMS -->
+  <div class="section" id="teams">
+    <div class="section-inner">
+      <h2>🌍 The 48 Teams</h2>
+      <p class="intro">Every nation competing at FIFA World Cup 2026. Rankings from the official April 2026 FIFA update.</p>
+      <div class="teams-grid" id="teams-grid">
+        <!-- UEFA (16) -->
+        <div class="team-row" data-rank="23"><span class="team-flag">🇦🇹</span><span class="team-name-text">Austria</span><span class="team-rank-badge">#23</span></div>
+        <div class="team-row" data-rank="9"><span class="team-flag">🇧🇪</span><span class="team-name-text">Belgium</span><span class="team-rank-badge">#9</span></div>
+        <div class="team-row" data-rank="52"><span class="team-flag">🇧🇦</span><span class="team-name-text">Bosnia &amp; Herzegovina</span><span class="team-rank-badge">#52</span></div>
+        <div class="team-row" data-rank="11"><span class="team-flag">🇭🇷</span><span class="team-name-text">Croatia</span><span class="team-rank-badge">#11</span></div>
+        <div class="team-row" data-rank="41"><span class="team-flag">🇨🇿</span><span class="team-name-text">Czech Republic</span><span class="team-rank-badge">#41</span></div>
+        <div class="team-row" data-rank="4"><span class="team-flag">🏴󠁧󠁢󠁥󠁮󠁧󠁿</span><span class="team-name-text">England</span><span class="team-rank-badge">#4</span></div>
+        <div class="team-row" data-rank="1"><span class="team-flag">🇫🇷</span><span class="team-name-text">France</span><span class="team-rank-badge">#1</span></div>
+        <div class="team-row" data-rank="10"><span class="team-flag">🇩🇪</span><span class="team-name-text">Germany</span><span class="team-rank-badge">#10</span></div>
+        <div class="team-row" data-rank="7"><span class="team-flag">🇳🇱</span><span class="team-name-text">Netherlands</span><span class="team-rank-badge">#7</span></div>
+        <div class="team-row" data-rank="44"><span class="team-flag">🇳🇴</span><span class="team-name-text">Norway</span><span class="team-rank-badge">#44</span></div>
+        <div class="team-row" data-rank="5"><span class="team-flag">🇵🇹</span><span class="team-name-text">Portugal</span><span class="team-rank-badge">#5</span></div>
+        <div class="team-row" data-rank="47"><span class="team-flag">🏴󠁧󠁢󠁳󠁣󠁴󠁿</span><span class="team-name-text">Scotland</span><span class="team-rank-badge">#47</span></div>
+        <div class="team-row" data-rank="2"><span class="team-flag">🇪🇸</span><span class="team-name-text">Spain</span><span class="team-rank-badge">#2</span></div>
+        <div class="team-row" data-rank="39"><span class="team-flag">🇸🇪</span><span class="team-name-text">Sweden</span><span class="team-rank-badge">#39</span></div>
+        <div class="team-row" data-rank="14"><span class="team-flag">🇨🇭</span><span class="team-name-text">Switzerland</span><span class="team-rank-badge">#14</span></div>
+        <div class="team-row" data-rank="42"><span class="team-flag">🇹🇷</span><span class="team-name-text">Turkey</span><span class="team-rank-badge">#42</span></div>
+        <!-- CONMEBOL (6) -->
+        <div class="team-row" data-rank="3"><span class="team-flag">🇦🇷</span><span class="team-name-text">Argentina</span><span class="team-rank-badge">#3</span></div>
+        <div class="team-row" data-rank="6"><span class="team-flag">🇧🇷</span><span class="team-name-text">Brazil</span><span class="team-rank-badge">#6</span></div>
+        <div class="team-row" data-rank="15"><span class="team-flag">🇨🇴</span><span class="team-name-text">Colombia</span><span class="team-rank-badge">#15</span></div>
+        <div class="team-row" data-rank="28"><span class="team-flag">🇪🇨</span><span class="team-name-text">Ecuador</span><span class="team-rank-badge">#28</span></div>
+        <div class="team-row" data-rank="64"><span class="team-flag">🇵🇾</span><span class="team-name-text">Paraguay</span><span class="team-rank-badge">#64</span></div>
+        <div class="team-row" data-rank="13"><span class="team-flag">🇺🇾</span><span class="team-name-text">Uruguay</span><span class="team-rank-badge">#13</span></div>
+        <!-- CONCACAF (6) -->
+        <div class="team-row" data-rank="30"><span class="team-flag">🇨🇦</span><span class="team-name-text">Canada</span><span class="team-rank-badge">#30</span></div>
+        <div class="team-row" data-rank="81"><span class="team-flag">🇨🇼</span><span class="team-name-text">Curaçao</span><span class="team-rank-badge">#81</span></div>
+        <div class="team-row" data-rank="83"><span class="team-flag">🇭🇹</span><span class="team-name-text">Haiti</span><span class="team-rank-badge">#83</span></div>
+        <div class="team-row" data-rank="15"><span class="team-flag">🇲🇽</span><span class="team-name-text">Mexico</span><span class="team-rank-badge">#15</span></div>
+        <div class="team-row" data-rank="53"><span class="team-flag">🇵🇦</span><span class="team-name-text">Panama</span><span class="team-rank-badge">#53</span></div>
+        <div class="team-row" data-rank="16"><span class="team-flag">🇺🇸</span><span class="team-name-text">USA</span><span class="team-rank-badge">#16</span></div>
+        <!-- AFC (8) -->
+        <div class="team-row" data-rank="24"><span class="team-flag">🇦🇺</span><span class="team-name-text">Australia</span><span class="team-rank-badge">#24</span></div>
+        <div class="team-row" data-rank="18"><span class="team-flag">🇮🇷</span><span class="team-name-text">Iran</span><span class="team-rank-badge">#18</span></div>
+        <div class="team-row" data-rank="17"><span class="team-flag">🇯🇵</span><span class="team-name-text">Japan</span><span class="team-rank-badge">#17</span></div>
+        <div class="team-row" data-rank="68"><span class="team-flag">🇯🇴</span><span class="team-name-text">Jordan</span><span class="team-rank-badge">#68</span></div>
+        <div class="team-row" data-rank="35"><span class="team-flag">🇶🇦</span><span class="team-name-text">Qatar</span><span class="team-rank-badge">#35</span></div>
+        <div class="team-row" data-rank="57"><span class="team-flag">🇸🇦</span><span class="team-name-text">Saudi Arabia</span><span class="team-rank-badge">#57</span></div>
+        <div class="team-row" data-rank="25"><span class="team-flag">🇰🇷</span><span class="team-name-text">South Korea</span><span class="team-rank-badge">#25</span></div>
+        <div class="team-row" data-rank="62"><span class="team-flag">🇺🇿</span><span class="team-name-text">Uzbekistan</span><span class="team-rank-badge">#62</span></div>
+        <!-- CAF (10) -->
+        <div class="team-row" data-rank="36"><span class="team-flag">🇩🇿</span><span class="team-name-text">Algeria</span><span class="team-rank-badge">#36</span></div>
+        <div class="team-row" data-rank="70"><span class="team-flag">🇨🇻</span><span class="team-name-text">Cape Verde</span><span class="team-rank-badge">#70</span></div>
+        <div class="team-row" data-rank="51"><span class="team-flag">🇨🇩</span><span class="team-name-text">DR Congo</span><span class="team-rank-badge">#51</span></div>
+        <div class="team-row" data-rank="29"><span class="team-flag">🇪🇬</span><span class="team-name-text">Egypt</span><span class="team-rank-badge">#29</span></div>
+        <div class="team-row" data-rank="65"><span class="team-flag">🇬🇭</span><span class="team-name-text">Ghana</span><span class="team-rank-badge">#65</span></div>
+        <div class="team-row" data-rank="33"><span class="team-flag">🇨🇮</span><span class="team-name-text">Ivory Coast</span><span class="team-rank-badge">#33</span></div>
+        <div class="team-row" data-rank="8"><span class="team-flag">🇲🇦</span><span class="team-name-text">Morocco</span><span class="team-rank-badge">#8</span></div>
+        <div class="team-row" data-rank="21"><span class="team-flag">🇸🇳</span><span class="team-name-text">Senegal</span><span class="team-rank-badge">#21</span></div>
+        <div class="team-row" data-rank="60"><span class="team-flag">🇿🇦</span><span class="team-name-text">South Africa</span><span class="team-rank-badge">#60</span></div>
+        <div class="team-row" data-rank="40"><span class="team-flag">🇹🇳</span><span class="team-name-text">Tunisia</span><span class="team-rank-badge">#40</span></div>
+        <!-- OFC -->
+        <div class="team-row" data-rank="95"><span class="team-flag">🇳🇿</span><span class="team-name-text">New Zealand</span><span class="team-rank-badge">#95</span></div>
+        <!-- Intercontinental -->
+        <div class="team-row" data-rank="61"><span class="team-flag">🇮🇶</span><span class="team-name-text">Iraq</span><span class="team-rank-badge">#61</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ENTRIES -->
+  <div class="section" id="entries">
+    <div class="section-inner">
+      <h2>👥 Entries</h2>
+      <p class="intro">Spots fill up on a first-come, first-served basis once payment is received. 48 spots available – grab one or two!</p>
+      <div class="players-grid" id="entries-grid">
+        <div class="player-row"><span class="player-num">1</span><span class="player-name">Tom Rolfe</span></div>
+        <div class="player-row"><span class="player-num">2</span><span class="player-name">Sarah Mitchell</span></div>
+        <div class="player-row"><span class="player-num">3</span><span class="player-name">James O'Brien</span></div>
+        <div class="player-row"><span class="player-num">4</span><span class="player-name">Emma Clarke</span></div>
+        <div class="player-row"><span class="player-num">5</span><span class="player-name">Harry Wilson</span></div>
+        <div class="player-row"><span class="player-num">6</span><span class="player-name">Sophie Turner</span></div>
+        <div class="player-row"><span class="player-num">7</span><span class="player-name">Dan Edwards</span></div>
+        <div class="player-row"><span class="player-num">8</span><span class="player-name">Alice Freeman</span></div>
+        <div class="player-row"><span class="player-num">9</span><span class="player-name">Matt Hughes</span></div>
+        <div class="player-row"><span class="player-num">10</span><span class="player-name">Lara Bennett</span></div>
+        <div class="player-row"><span class="player-num">11</span><span class="player-name">Jon Parsons</span></div>
+        <div class="player-row"><span class="player-num">12</span><span class="player-name">Gwen Harrison</span></div>
+        <div class="player-row"><span class="player-num">13</span><span class="player-name">Paolo Greco</span></div>
+        <div class="player-row"><span class="player-num">14</span><span class="player-name">Andrew Scott</span></div>
+        <div class="player-row"><span class="player-num">15</span><span class="player-name">Emily Shaw</span></div>
+        <div class="player-row"><span class="player-num">16</span><span class="player-name">Claire Roberts</span></div>
+        <div class="player-row"><span class="player-num">17</span><span class="player-name">Imogen Hayes</span></div>
+        <div class="player-row"><span class="player-num">18</span><span class="player-name">Tom Henderson</span></div>
+        <div class="player-row"><span class="player-num">19</span><span class="player-name">Mali Thomas</span></div>
+        <div class="player-row"><span class="player-num">20</span><span class="player-name">Josh Nightingale</span></div>
+        <div class="player-row"><span class="player-num">21</span><span class="player-name">Liam Porter</span></div>
+        <div class="player-row"><span class="player-num">22</span><span class="player-name">Clare Taylor</span></div>
+        <div class="player-row"><span class="player-num">23</span><span class="player-name">Seb Collins</span></div>
+        <div class="player-row"><span class="player-num">24</span><span class="player-name">Arthur Hill</span></div>
+        <div class="player-row"><span class="player-num">25</span><span class="player-name">Dan Edwards</span></div>
+        <div class="player-row"><span class="player-num">26</span><span class="player-name">Harry Wilson</span></div>
+        <div class="player-row"><span class="player-num">27</span><span class="player-name">Ollie King</span></div>
+        <div class="player-row"><span class="player-num">28</span><span class="player-name">Becky Marsh</span></div>
+        <div class="player-row"><span class="player-num">29</span><span class="player-name">Nick Fraser</span></div>
+        <div class="player-row"><span class="player-num">30</span><span class="player-name">Priya Nair</span></div>
+        <div class="player-row"><span class="player-num">31</span><span class="player-name">Will Sutton</span></div>
+        <div class="player-row"><span class="player-num">32</span><span class="player-name">Fiona Carr</span></div>
+        <div class="player-row"><span class="player-num">33</span><span class="player-name">Ravi Patel</span></div>
+        <div class="player-row"><span class="player-num">34</span><span class="player-name">Katie Long</span></div>
+        <div class="player-row"><span class="player-num">35</span><span class="player-name">Sam Whitfield</span></div>
+        <div class="player-row"><span class="player-num">36</span><span class="player-name">Laura Green</span></div>
+        <div class="player-row"><span class="player-num">37</span><span class="player-name">Chris Barnes</span></div>
+        <div class="player-row"><span class="player-num">38</span><span class="player-name">Amy Reid</span></div>
+        <div class="player-row"><span class="player-num">39</span><span class="player-name">Ben Cooper</span></div>
+        <div class="player-row"><span class="player-num">40</span><span class="player-name">Jess Arnold</span></div>
+        <div class="player-row"><span class="player-num">41</span><span class="player-name">Patrick Walsh</span></div>
+        <div class="player-row"><span class="player-num">42</span><span class="player-name">Natalie Fox</span></div>
+        <div class="player-row"><span class="player-num">43</span><span class="player-name">Grace Simmons</span></div>
+        <div class="player-row"><span class="player-num">44</span><span class="player-name">Mark Donnelly</span></div>
+        <div class="player-row"><span class="player-num">45</span><span class="player-name">Chloe Manning</span></div>
+        <div class="player-row"><span class="player-num">46</span><span class="player-name">Rob Sherwood</span></div>
+        <div class="player-row"><span class="player-num">47</span><span class="player-name">Yasmin Osei</span></div>
+        <div class="player-row"><span class="player-num">48</span><span class="player-name">Finn McCarthy</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAY UP -->
+  <div class="section" id="pay" style="padding-bottom: 64px;">
+    <div class="pay-card">
+      <h2>💸 Pay Up</h2>
+      <p>Pay your £10 entry ASAP to confirm your spot. Add another £5 if you want in on the Fantasy League. Want two teams? Just pay twice!</p>
+      <div>
+        <a href="https://monzo.me/thomasrolfe/10.00?d=Sweepstake" class="btn-pay">Pay via Monzo →</a>
+        <a href="https://gaming.uefa.com/en/eurofantasy/leagues/yu7HnT/0054006F006D006D0079007300200046006F006F007400620061006C006C00200043006C00750062/Tom%20Rolfe" class="btn-pay btn-pay-ghost">Join Fantasy →</a>
+      </div>
+      <p class="bank">Thomas Rolfe · 04-00-04 · 51717309</p>
+    </div>
+  </div>
+
+  <footer>Tommy's Sweepstake Bonanza · World Cup 2026 · Run by Tom Rolfe</footer>
+
+  <script>
+    // ── Fantasy prize pot ────────────────────────────
+    function updateFantasyPrize() {
+      const count  = document.querySelectorAll('#fantasy-list .fantasy-player').length;
+      const amount = count * 5;
+      document.getElementById('fantasy-prize-amount').textContent      = `£${amount}`;
+      document.getElementById('fantasy-player-count-label').textContent = `${count} player${count !== 1 ? 's' : ''} × £5`;
+      document.getElementById('fantasy-prize-header').textContent       = `£${amount}`;
+    }
+
+    // ── Draw ─────────────────────────────────────────
+    const Draw = {
+      // Each team is { flag, name, rank, display }
+      teams: [],
+      entries: [],
+      shuffledTeams: [],
+      shuffledEntries: [],
+      index: 0,
+      animating: false,
+
+      readDOM() {
+        this.teams = Array.from(document.querySelectorAll('#teams-grid .team-row'))
+          .map(el => {
+            const flag = el.querySelector('.team-flag').textContent;
+            const name = el.querySelector('.team-name-text').textContent.trim();
+            const rank = parseInt(el.dataset.rank, 10);
+            return { flag, name, rank, display: flag + '\u00a0' + name };
+          });
+
+        this.entries = Array.from(document.querySelectorAll('#entries-grid .player-name:not(.empty)'))
+          .map(el => el.textContent.trim());
+      },
+
+      shuffle(arr) {
+        const a = [...arr];
+        for (let i = a.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [a[i], a[j]] = [a[j], a[i]];
+        }
+        return a;
+      },
+
+      init() {
+        this.readDOM();
+        this.shuffledTeams   = this.shuffle(this.teams);
+        this.shuffledEntries = this.shuffle(this.entries);
+        this.index     = 0;
+        this.animating = false;
+
+        document.getElementById('draw-rank-caption').textContent = '??';
+
+        const tbody = document.getElementById('draw-tbody');
+        tbody.innerHTML = '';
+        const tr = document.createElement('tr');
+        tr.id = 'draw-empty-row';
+        tr.innerHTML = `<td colspan="4" style="color:var(--muted);font-family:'Fredoka',sans-serif;font-size:15px;padding:20px 14px;">Hit "Draw Next" to start!</td>`;
+        tbody.appendChild(tr);
+
+        this.updateUI();
+      },
+
+      runSlot(team, pool, onComplete) {
+        const el      = document.getElementById('draw-display');
+        const caption = document.getElementById('draw-rank-caption');
+        el.classList.remove('landed');
+        caption.textContent = 'FIFA Ranking: ??';
+
+        let delay    = 55;
+        const rate   = 1.12;
+        const stop   = 330;
+        let ticks    = 0;
+        const minTicks = 14;
+
+        const tick = () => {
+          el.textContent = pool[Math.floor(Math.random() * pool.length)].display;
+          ticks++;
+          delay = Math.min(delay * rate, stop);
+
+          if (delay < stop || ticks < minTicks) {
+            setTimeout(tick, delay);
+          } else {
+            el.textContent = team.display;
+            el.classList.add('landed');
+            setTimeout(() => {
+              caption.textContent = `FIFA Ranking: #${team.rank}`;
+            }, 300);
+            setTimeout(() => {
+              el.classList.remove('landed');
+              onComplete();
+            }, 700);
+          }
+        };
+
+        tick();
+      },
+
+      drawNext() {
+        if (this.animating || this.index >= this.shuffledEntries.length) return;
+        this.animating = true;
+
+        // Reset caption to ?? as soon as a new draw begins
+        document.getElementById('draw-rank-caption').textContent = 'FIFA Ranking: ??';
+        this.updateUI();
+
+        const entry = this.shuffledEntries[this.index];
+        const team  = this.shuffledTeams[this.index];
+        const pool  = this.shuffledTeams.slice(this.index);
+
+        document.getElementById('draw-for-label').textContent = `Drawing for: ${entry}`;
+
+        this.runSlot(team, pool, () => {
+          this.addRow(this.index + 1, entry, team);
+          this.index++;
+          this.animating = false;
+          this.updateUI();
+        });
+      },
+
+      addRow(num, entry, team) {
+        const tbody = document.getElementById('draw-tbody');
+        const empty = document.getElementById('draw-empty-row');
+        if (empty) empty.remove();
+
+        const tr = document.createElement('tr');
+        tr.className = 'draw-row-new';
+        tr.innerHTML = `
+          <td class="td-num">${num}</td>
+          <td class="td-entry">${entry}</td>
+          <td class="td-team">${team.display}</td>
+          <td class="td-rank">#${team.rank}</td>
+        `;
+        tbody.insertBefore(tr, tbody.firstChild);
+      },
+
+      updateUI() {
+        const btn      = document.getElementById('draw-btn');
+        const forLabel = document.getElementById('draw-for-label');
+        const display  = document.getElementById('draw-display');
+        const status   = document.getElementById('draw-status');
+        const remaining = this.shuffledEntries.length - this.index;
+
+        document.getElementById('reset-btn').disabled = false;
+
+        if (this.animating) { btn.disabled = true; status.textContent = '\u00a0'; return; }
+
+        if (this.index === 0) {
+          display.textContent  = '– – –';
+          forLabel.textContent = '\u00a0';
+          document.getElementById('draw-rank-caption').textContent = 'FIFA Ranking: ??';
+          status.textContent   = `${this.shuffledEntries.length} entries · ${this.shuffledTeams.length} teams`;
+          btn.disabled = false;
+        } else if (remaining === 0) {
+          display.textContent  = '🎉';
+          forLabel.textContent = 'Draw complete!';
+          document.getElementById('draw-rank-caption').textContent = 'FIFA Ranking: ??';
+          status.textContent   = '\u00a0';
+          btn.disabled = true;
+        } else {
+          forLabel.textContent = `Up next: ${this.shuffledEntries[this.index]}`;
+          status.textContent   = `${remaining} remaining`;
+          btn.disabled = false;
+          // rank caption intentionally left alone – keeps showing last drawn rank
+        }
+      }
+    };
+
+    document.addEventListener('DOMContentLoaded', () => {
+      updateFantasyPrize();
+      Draw.init();
+      document.getElementById('draw-btn').addEventListener('click',  () => Draw.drawNext());
+      document.getElementById('reset-btn').addEventListener('click', () => Draw.init());
+    });
+  </script>
+
+</body>
+</html>
