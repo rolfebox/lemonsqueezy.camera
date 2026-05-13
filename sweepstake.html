@@ -148,6 +148,7 @@
       border-radius: 22px;
       padding: 40px 36px;
       border: 2px solid var(--border);
+      overflow: hidden; /* clips children to the rounded container */
     }
 
     h2 {
@@ -196,6 +197,14 @@
     .prize-name { font-family: 'Fredoka', sans-serif; font-size: 21px; font-weight: 600; line-height: 1.2; }
     .prize-desc { font-size: 14px; color: var(--muted); margin-top: 2px; }
     .prize-amount { font-family: 'Fredoka', sans-serif; font-size: 22px; font-weight: 700; color: var(--accent); white-space: nowrap; }
+
+    /* middle column must be allowed to shrink on narrow screens */
+    .prize > div { min-width: 0; }
+
+    @media (max-width: 480px) {
+      .section-inner { padding: 24px 18px; }
+      .prize { padding: 14px 16px; gap: 10px; }
+    }
 
     /* ── CARDS ────────────────────────────────────── */
     .card {
