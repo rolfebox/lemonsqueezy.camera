@@ -39,19 +39,17 @@
 
     .eyebrow {
       font-family: 'Fredoka', sans-serif;
-      font-size: 15px;
+      font-size: clamp(22px, 5vw, 34px);
       font-weight: 500;
-      letter-spacing: .14em;
-      text-transform: uppercase;
       color: var(--muted);
-      margin-bottom: 14px;
+      margin-bottom: 10px;
     }
 
     h1 {
       font-family: 'Fredoka', sans-serif;
       font-weight: 700;
-      font-size: clamp(58px, 11vw, 108px);
-      line-height: .95;
+      font-size: clamp(40px, 7vw, 72px);
+      line-height: 1;
       margin-bottom: 8px;
     }
 
@@ -534,8 +532,8 @@
 <body>
 
   <header>
-    <p class="eyebrow">⚽ Tommy's Sweepstake Bonanza</p>
-    <h1>World Cup<br>2026</h1>
+    <p class="eyebrow">⚽ World Cup 2026 ⚽</p>
+    <h1>Tommy's Sweepstake Bonanza</h1>
     <p class="host-line">USA · Canada · Mexico · 11 June – 19 July</p>
     <div class="stats">
       <div class="stat"><span class="stat-value">£10</span><span class="stat-label">Per Entry</span></div>
@@ -566,7 +564,7 @@
         <div class="prize"><span class="prize-icon">🥊</span><div><div class="prize-name">FIFA Peace Prize</div><div class="prize-desc">Fittingly given to the team who collects the most red cards.</div></div><span class="prize-amount">£50</span></div>
         <div class="prize"><span class="prize-icon">🔨</span><div><div class="prize-name">Biggest Hammering</div><div class="prize-desc">Lose a single match by the biggest scoreline. Losing 1-6 "beats" losing 0-5.</div></div><span class="prize-amount">£50</span></div>
         <div class="prize prize-charity"><span class="prize-icon">🗽</span><div><div class="prize-name">The ICE Melter</div><div class="prize-desc">I don't want to support anything the USA does right now, but I also don't want to boycott the tournament! So as a kind of guilt-offset for us all I'm donating 10% of our prize pool to Freedom for Immigrants, a charity fighting ICE detention in the USA.</div></div><span class="prize-amount">£50</span></div>
-        <div class="prize"><span class="prize-icon">🦄</span><div><div class="prize-name">Fantasy League Winner</div><div class="prize-desc">First place in our fantasy mini-league. See below!</div></div><span class="prize-amount" id="fantasy-prize-header">£???</span></div>
+        <div class="prize"><span class="prize-icon">🦄</span><div><div class="prize-name">Fantasy League Winner</div><div class="prize-desc">Optional side game. First place in the mini-league. See below!</div></div><span class="prize-amount" id="fantasy-prize-header">£???</span></div>
       </div>
     </div>
   </div>
@@ -575,7 +573,7 @@
   <div class="section" id="fantasy">
     <div class="section-inner">
       <h2>🦄 Fantasy League</h2>
-      <p class="intro">An optional side game. Pick 15 players and earn points based on their real-life performances in the tournament. £5 to enter. Winner takes all!</p>
+      <p class="intro">An optional side game. Pick 15 players and earn points based on their real-life performances in the tournament. £5 to enter, winner takes the lot. It's fun!</p>
 
       <div class="fantasy-prize">
         <div>
@@ -593,8 +591,8 @@
       </div>
 
       <div class="card">
-        <a href="https://gaming.uefa.com/en/eurofantasy/leagues/yu7HnT/0054006F006D006D0079007300200046006F006F007400620061006C006C00200043006C00750062/Tom%20Rolfe" class="btn">Join the mini-league →</a>
-        <p class="code-note">or use code <strong>yu7HnT</strong></p>
+        <a href="https://gaming.uefa.com/en/eurofantasy/leagues/4OBCG1NP/0054006F006D006D0079007300200046006F006F007400620061006C006C00200043006C00750062/Tom%20Rolfe" class="btn">Join the mini-league →</a>
+        <p class="code-note">or use code <strong>4OBCG1NP</strong></p>
       </div>
     </div>
   </div>
@@ -606,7 +604,7 @@
 
       <div class="draw-note">
         <span class="draw-note-icon">ℹ️</span>
-        <span>Tom will run the <strong>real draw live</strong> once all 48 entries are filled. Until then, anyone can have a play below – results won't count!</span>
+        <span>I'll run the real draw live on Instagram (for accountability) once all 48 entries are filled. Until then, anyone can have a play with this little sweepstake widget below – results won't count though!</span>
       </div>
 
       <div class="draw-shell">
@@ -635,11 +633,23 @@
     </div>
   </div>
 
+  <!-- SPONSOR -->
+  <div class="section" id="sponsor">
+    <div class="section-inner" style="text-align:center; padding: 32px 36px;">
+      <p style="font-family:'Fredoka',sans-serif;font-size:13px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:10px;">Sponsored by</p>
+      <p style="font-family:'Fredoka',sans-serif;font-size:28px;font-weight:700;color:var(--text);display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:10px;">
+        🍋 Lemon Squeezy Kids Camera 🍋
+      </p>
+      <p style="font-size:15px;color:var(--muted);max-width:400px;margin:0 auto 20px;">An easy peasy camera app I made for my kids, with simple controls, sensible limits, and a built-in photo library so they don't wreck yours. Tell your parent friends about it please :)</p>
+      <a href="https://lemonsqueezy.camera" target="_blank" rel="noopener" class="btn">Learn More →</a>
+    </div>
+  </div>
+
   <!-- TEAMS -->
   <div class="section" id="teams">
     <div class="section-inner">
       <h2>🌍 Teams</h2>
-      <p class="intro">Every nation competing at WC26, along with their world rankings.</p>
+      <p class="intro">Every nation competing at WC26, along with their world rankings. New Zealand are ranked lowest, if you're wondering.</p>
       <div class="teams-grid" id="teams-grid">
         <!-- UEFA (16) -->
         <div class="team-row" data-rank="23"><span class="team-flag">🇦🇹</span><span class="team-name-text">Austria</span><span class="team-rank-badge">#23</span></div>
@@ -704,7 +714,7 @@
   <div class="section" id="entries">
     <div class="section-inner">
       <h2>👥 Entrants</h2>
-      <p class="intro">48 spots available – send your £10 over to confirm your place. I don't have 48 friends so feel free to pay double and take up two spots.</p>
+      <p class="intro">A whopping 48 spots available this year – I'll update the list as I receive entry fees. Good luck!</p>
       <div class="players-grid" id="entries-grid">
         <div class="player-row"><span class="player-num">1</span><span class="player-name">Tom Rolfe</span></div>
         <div class="player-row"><span class="player-num">2</span><span class="player-name">Claire Rolfe</span></div>
@@ -762,10 +772,10 @@
   <div class="section" id="pay" style="padding-bottom: 64px;">
     <div class="pay-card">
       <h2>💸 Pay Up</h2>
-      <p>Pay your £10 entry ASAP to confirm your spot. Add another £5 if you want in on the Fantasy League. Want two teams? Add an extra £10!</p>
+      <p>Send over £10 please to confirm your spot. Add £5 if you're also joining the Fantasy League. Thanks!</p>
       <div>
         <a href="https://monzo.me/thomasrolfe/10.00?d=Sweepstake" class="btn-pay">Pay via Monzo →</a>
-        <a href="https://gaming.uefa.com/en/eurofantasy/leagues/yu7HnT/0054006F006D006D0079007300200046006F006F007400620061006C006C00200043006C00750062/Tom%20Rolfe" class="btn-pay btn-pay-ghost">Join Fantasy →</a>
+        <a href="https://gaming.uefa.com/en/eurofantasy/leagues/4OBCG1NP/0054006F006D006D0079007300200046006F006F007400620061006C006C00200043006C00750062/Tom%20Rolfe" class="btn-pay btn-pay-ghost">Join Fantasy →</a>
       </div>
       <p class="bank">Thomas Rolfe · 04-00-04 · 51717309</p>
     </div>
